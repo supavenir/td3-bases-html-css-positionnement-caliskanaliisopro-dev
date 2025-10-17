@@ -1,0 +1,156 @@
+/* Advanced Styles - Professional animations and modern effects */
+
+/* Statistics Counter */
+.stat-number {
+  font-size: 3rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--brand), var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.stat-number.accent {
+  background: linear-gradient(135deg, var(--accent), var(--brand));
+}
+
+.stat-number.dark {
+  background: linear-gradient(135deg, var(--brand-dark), var(--brand));
+}
+
+/* Team Grid */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.team-member {
+  text-align: center;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 0 auto 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition);
+}
+
+.team-member:hover .avatar {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Process Steps */
+.process-steps {
+  margin-top: 1.5rem;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  transition: transform var(--transition);
+}
+
+.step:hover {
+  transform: translateX(10px);
+}
+
+.step-number {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  transition: all var(--transition);
+}
+
+.step:hover .step-number {
+  background: var(--brand);
+  color: white;
+}
+
+/* Features List */
+.features-list {
+  margin-top: 1.5rem;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  transition: transform var(--transition);
+}
+
+.feature:hover {
+  transform: translateX(10px);
+}
+
+.feature i {
+  transition: transform var(--transition);
+}
+
+.feature:hover i {
+  transform: scale(1.2);
+}
+
+/* CTA Section */
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+@media (max-width: 640px) {
+  .cta-buttons {
+    flex-direction: column;
+  }
+  
+  .cta-buttons .btn {
+    width: 100%;
+  }
+}
+
+/* Advanced Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.pulse-animation {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Scroll Reveal */
+[data-animate] {
+  --delay: 0ms;
+  animation-delay: var(--delay);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-animate] {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

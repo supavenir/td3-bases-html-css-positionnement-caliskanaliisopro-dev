@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blog — Web Arena</title>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <link rel="stylesheet" href="../../assets/css/td3/web-arena.css">
+  <link rel="stylesheet" href="../../assets/css/advanced-styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('[data-animate]').forEach((el) => {
+            observer.observe(el);
+        });
+    });
+  </script>
+</head>
+<body class="blog-page">
+  <header class="site-header glass">
+    <div class="container header-inner">
+      <a class="brand" href="../../index.html">
+        <i class="fa-solid fa-pen-fancy"></i>
+        Web Arena — Blog
+      </a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="../../index.html">Accueil</a></li>
+          <li><a href="about-us.html">À propos</a></li>
+          <li><a class="active" href="blog.html">Blog</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero pattern-dots" data-animate="fade-in">
+    <div class="glass" style="position: absolute; inset: 0; z-index: 1; opacity: 0.7;"></div>
+    <div class="container" style="position: relative; z-index: 2;">
+      <span class="badge glass" data-animate="slide-in" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; border-radius: 100px; margin-bottom: 1rem;">
+        <i class="fa-solid fa-sparkles"></i>
+        Nouveautés
+      </span>
+      <h1 class="text-gradient" data-text="Insights & Actualités">Insights & Actualités</h1>
+      <p class="lead" data-animate="fade-in" style="animation-delay: 200ms">
+        Explorez nos dernières réflexions sur le design, le développement et les stratégies digitales.
+      </p>
+    </div>
+  </section>
+
+  <main class="container">
+    <div class="blog-layout" style="margin-top: var(--section-spacing)">
+      <div class="content">
+        <section class="featured-post glass" data-animate="scale-in" style="padding: 2rem; border-radius: var(--radius-lg); margin-bottom: var(--gap);">
+          <span class="badge" style="background: var(--brand); color: white; padding: 0.25rem 0.75rem; border-radius: 100px; font-size: 0.875rem;">
+            Article à la une
+          </span>
+          <article class="post" style="background: transparent; box-shadow: none; margin-top: 1rem;">
+            <h2 class="post-title text-gradient" data-text="Améliorer la conversion en 5 étapes">
+              Améliorer la conversion en 5 étapes
+            </h2>
+            <div class="meta" style="margin: 1rem 0;">
+              <span class="author">
+                <div class="avatar glass" style="display: inline-flex; width: 32px; height: 32px; border-radius: 50%; align-items: center; justify-content: center; margin-right: 0.5rem;">
+                  <i class="fa-solid fa-user"></i>
+                </div>
+                Julie
+              </span>
+              <span class="date">
+                <i class="fa-regular fa-calendar"></i>
+                <time datetime="2025-10-01">1 oct. 2025</time>
+              </span>
+              <span class="read-time">
+                <i class="fa-regular fa-clock"></i>
+                5 min de lecture
+              </span>
+            </div>
+            <p class="post-excerpt">
+              Une synthèse d'actions concrètes et éprouvées pour augmenter significativement le taux de conversion 
+              sur vos pages clés. Découvrez comment optimiser chaque étape du parcours utilisateur.
+            </p>
+            <div class="tags-cloud" style="margin: 1rem 0;">
+              <a class="tag" href="#"><i class="fa-solid fa-tag"></i> UX</a>
+              <a class="tag" href="#"><i class="fa-solid fa-tag"></i> Conversion</a>
+              <a class="tag" href="#"><i class="fa-solid fa-tag"></i> Design</a>
+            </div>
+            <a class="btn primary hover-glow" href="#">
+              Lire l'article
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </article>
+        </section>
+
+        <section class="posts-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--gap);">
+          <article class="post hover-lift" data-animate="slide-in" style="animation-delay: 200ms">
+            <div class="post-content">
+              <div class="post-image glass" style="height: 200px; border-radius: var(--radius-md); margin-bottom: 1rem; display: flex; align-items: center; justify-content: center;">
+                <i class="fa-solid fa-gauge-high fa-3x" style="color: var(--brand-light);"></i>
+              </div>
+              <h2 class="post-title">Checklist performance front-end</h2>
+              <div class="meta">
+                <span class="author">
+                  <div class="avatar glass">
+                    <i class="fa-solid fa-user"></i>
+                  </div>
+                  Marc
+                </span>
+                <time datetime="2025-09-15">15 sept. 2025</time>
+              </div>
+              <p class="post-excerpt">
+                Points clés essentiels pour optimiser les performances de chargement et améliorer significativement l'expérience utilisateur.
+              </p>
+              <div class="tags-cloud">
+                <a class="tag" href="#"><i class="fa-solid fa-tag"></i> Performance</a>
+                <a class="tag" href="#"><i class="fa-solid fa-tag"></i> SEO</a>
+              </div>
+              <a class="readmore" href="#">
+                Lire la suite
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </article>
+              <a class="readmore" href="#">
+                Lire la suite
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </article>
+
+          <nav class="pagination" aria-label="Pagination blog">
+            <a class="page" href="#"><i class="fa-solid fa-chevron-left"></i> Précédent</a>
+            <a class="page active" href="#">1</a>
+            <a class="page" href="#">2</a>
+            <a class="page" href="#">3</a>
+            <a class="page" href="#">Suivant <i class="fa-solid fa-chevron-right"></i></a>
+          </nav>
+        </section>
+      </div>
+
+      <aside class="sidebar">
+        <div class="sidebar-section glass hover-lift" data-animate="slide-in">
+          <h3>
+            <i class="fa-solid fa-search"></i>
+            Recherche
+          </h3>
+          <div class="search-form">
+            <input type="search" placeholder="Rechercher un article..." class="glass">
+            <button class="btn primary hover-glow">
+              <i class="fa-solid fa-search"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="sidebar-section glass hover-lift" data-animate="slide-in" style="animation-delay: 200ms">
+          <h3>
+            <i class="fa-solid fa-star"></i>
+            Articles populaires
+          </h3>
+          <div class="popular-posts">
+            <article class="mini-post glass">
+              <span class="rank text-gradient">01</span>
+              <div>
+                <h4>Guide SEO 2025</h4>
+                <p class="meta">15K lectures</p>
+              </div>
+            </article>
+            <article class="mini-post glass">
+              <span class="rank text-gradient">02</span>
+              <div>
+                <h4>UI Design Trends</h4>
+                <p class="meta">12K lectures</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="sidebar-section glass hover-lift" data-animate="slide-in" style="animation-delay: 400ms">
+          <h3>
+            <i class="fa-solid fa-tags"></i>
+            Tags populaires
+          </h3>
+          <div class="tags-cloud">
+            <a class="tag" href="#"><i class="fa-solid fa-tag"></i> UX Design</a>
+            <a class="tag" href="#"><i class="fa-solid fa-tag"></i> Performance</a>
+            <a class="tag" href="#"><i class="fa-solid fa-tag"></i> SEO</a>
+            <a class="tag" href="#"><i class="fa-solid fa-tag"></i> JavaScript</a>
+            <a class="tag" href="#"><i class="fa-solid fa-tag"></i> CSS</a>
+          </div>
+        </div>
+
+        <div class="sidebar-section glass hover-lift" data-animate="slide-in" style="animation-delay: 600ms">
+          <h3>
+            <i class="fa-solid fa-newspaper"></i>
+            Newsletter
+          </h3>
+          <p>Recevez nos meilleurs articles directement dans votre boîte mail.</p>
+          <form class="newsletter-form" style="margin-top: 1rem;">
+            <input type="email" placeholder="Votre email" class="glass" required>
+            <button type="submit" class="btn primary hover-glow" style="width: 100%; margin-top: 0.5rem;">
+              <i class="fa-solid fa-paper-plane"></i>
+              S'abonner
+            </button>
+          </form>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer glass pattern-dots" data-animate="fade-in">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="../../index.html">
+            <i class="fa-solid fa-pen-fancy"></i>
+            Web Arena
+          </a>
+          <p>Votre source d'expertise pour le développement web moderne et le design d'interface.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="../../index.html">Accueil</a></li>
+            <li><a href="about-us.html">À propos</a></li>
+            <li><a href="blog.html">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <h4>Suivez-nous</h4>
+          <div class="social-links">
+            <a href="#" class="hover-lift" aria-label="Twitter">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="#" class="hover-lift" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="#" class="hover-lift" aria-label="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> Web Arena. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script src="../../assets/js/site.js"></script>
+</body>
+</html>

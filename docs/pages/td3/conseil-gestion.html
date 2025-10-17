@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conseil en gestion — Solutions stratégiques pour entreprises</title>
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/td3/conseil-gestion.css">
+    <link rel="stylesheet" href="../../assets/css/advanced-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            document.querySelectorAll('[data-animate]').forEach((el) => {
+                observer.observe(el);
+            });
+
+            // Animation des compteurs
+            const counters = document.querySelectorAll('.counter');
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const duration = 2000; // 2 secondes
+                const step = target / (duration / 16); // 60 FPS
+                let current = 0;
+
+                function updateCounter() {
+                    current += step;
+                    if (current < target) {
+                        counter.textContent = Math.round(current);
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target;
+                    }
+                }
+
+                const counterObserver = new IntersectionObserver((entries) => {
+                    if (entries[0].isIntersecting) {
+                        updateCounter();
+                        counterObserver.unobserve(counter);
+                    }
+                });
+
+                counterObserver.observe(counter);
+            });
+        });
+    </script>
+</head>
+<body class="conseil-page">
+    <header class="site-header glass">
+        <div class="container header-inner">
+            <a class="brand" href="../../index.html">
+                <i class="fa-solid fa-chart-mixed"></i>
+                Conseil en gestion
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../../index.html">Accueil</a></li>
+                    <li><a href="about-us.html">À propos</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="#contact" class="btn primary hover-glow">Nous contacter</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero pattern-dots" data-animate="fade-in">
+            <div class="glass" style="position: absolute; inset: 0; z-index: 1; opacity: 0.7;"></div>
+            <div class="container" style="position: relative; z-index: 2;">
+                <span class="badge glass" data-animate="slide-in">
+                    <i class="fa-solid fa-award"></i>
+                    Cabinet de conseil certifié ISO 9001
+                </span>
+                <h1 class="text-gradient" data-text="Excellence en conseil stratégique">
+                    Excellence en conseil stratégique
+                </h1>
+                <p class="lead" data-animate="fade-in" style="animation-delay: 200ms">
+                    Transformez votre entreprise avec nos solutions sur-mesure en stratégie, 
+                    finance et organisation. Plus de 500 dirigeants nous font confiance.
+                </p>
+                <div class="hero-actions" data-animate="slide-in" style="animation-delay: 400ms">
+                    <a href="#services" class="btn primary hover-glow">
+                        <i class="fa-solid fa-rocket"></i>
+                        Explorer nos solutions
+                    </a>
+                    <a href="#contact" class="btn glass">
+                        <i class="fa-solid fa-calendar"></i>
+                        Consultation gratuite
+                    </a>
+                </div>
+                <div class="hero-stats" style="margin-top: 3rem" data-animate="fade-in" style="animation-delay: 600ms">
+                    <div class="stats-grid glass" style="padding: 2rem; border-radius: var(--radius-lg); display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; text-align: center;">
+                        <div>
+                            <div class="counter text-gradient" data-target="500">0</div>
+                            <p>Clients satisfaits</p>
+                        </div>
+                        <div>
+                            <div class="counter text-gradient" data-target="95">0</div>
+                            <p>% de réussite</p>
+                        </div>
+                        <div>
+                            <div class="counter text-gradient" data-target="25">0</div>
+                            <p>Consultants experts</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="container" style="margin-top: var(--section-spacing)">
+            <header class="section-header text-center" data-animate="fade-in">
+                <span class="badge glass">
+                    <i class="fa-solid fa-star"></i>
+                    Services premium
+                </span>
+                <h2 class="text-gradient" data-text="Nos solutions stratégiques">Nos solutions stratégiques</h2>
+                <p class="lead" style="max-width: 720px; margin: 1rem auto 3rem;">
+                    Une approche intégrée pour transformer votre entreprise et accélérer sa croissance, 
+                    soutenue par des experts reconnus dans leur domaine.
+                </p>
+            </header>
+
+            <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--gap);">
+                <article class="service-card glass hover-lift" data-animate="slide-in">
+                    <div class="pattern-dots" style="position: absolute; inset: 0; opacity: 0.05;"></div>
+                    <header class="card-header">
+                        <div class="icon-circle" style="width: 64px; height: 64px; border-radius: 50%; background: rgba(var(--brand-rgb), 0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                            <i class="fa-solid fa-chart-line fa-2x" style="color: var(--brand)"></i>
+                        </div>
+                        <h3>Diagnostic financier</h3>
+                    </header>
+                    <div class="card-body">
+                        <p>Analyse approfondie de vos performances financières et identification des leviers d'amélioration.</p>
+                        <ul class="features-list" style="margin: 1.5rem 0;">
+                            <li>
+                                <i class="fa-solid fa-check-circle" style="color: var(--accent)"></i>
+                                Audit financier complet
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-check-circle" style="color: var(--accent)"></i>
+                                Optimisation de la trésorerie
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-check-circle" style="color: var(--accent)"></i>
+                                Plan d'actions priorisé
+                            </li>
+                        </ul>
+                        <a class="btn primary hover-glow" href="#">
+                            Découvrir l'offre
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="service-card glass hover-lift" data-animate="slide-in" style="animation-delay: 200ms">
+                    <div class="pattern-dots" style="position: absolute; inset: 0; opacity: 0.05;"></div>
+                    <header class="card-header">
+                        <div class="icon-circle" style="width: 64px; height: 64px; border-radius: 50%; background: rgba(var(--accent-rgb), 0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                            <i class="fa-solid fa-users fa-2x" style="color: var(--accent)"></i>
+                        </div>
+                        <h3>Organisation & RH</h3>
+                    </header>
+                    <div class="card-body">
+                        <p>Optimisation de votre structure organisationnelle et développement des talents.</p>
+                        <ul class="features-list" style="margin: 1.5rem 0;">
+                            <li>
+                                <i class="fa-solid fa-check-circle" style="color: var(--accent)"></i>
+                                Audit organisationnel
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-check-circle" style="color: var(--accent)"></i>
+                                Développement leadership
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-check-circle" style="color: var(--accent)"></i>
+                                Gestion du changement
+                            </li>
+                        </ul>
+                        <a class="btn primary hover-glow" href="#">
+                            Découvrir l'offre
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="service-card glass hover-lift" data-animate="slide-in" style="animation-delay: 400ms">
+                    <div class="pattern-dots" style="position: absolute; inset: 0; opacity: 0.05;"></div>
+                    <header class="card-header">
+                        <div class="icon-circle" style="width: 64px; height: 64px; border-radius: 50%; background: rgba(var(--brand-dark-rgb), 0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                            <i class="fa-solid fa-lightbulb fa-2x" style="color: var(--brand-dark)"></i>
+                        </div>
+                        <h3>Stratégie & croissance</h3>
+                    </header>
+                    <div class="card-body">
+                        <p>Définition et mise en œuvre de votre stratégie de croissance à long terme.</p>
+                        <ul class="features-list" style="margin: 1.5rem 0;">
+                            <li>
+                                <i class="fa-solid fa-check-circle" style="color: var(--accent)"></i>
+                                Analyse de marché
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-check-circle" style="color: var(--accent)"></i>
+                                Plan stratégique
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-check-circle" style="color: var(--accent)"></i>
+                                Innovation & Digital
+                            </li>
+                        </ul>
+                        <a class="btn primary hover-glow" href="#">
+                            Découvrir l'offre
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="container" style="margin-top: var(--section-spacing)">
+            <div class="testimonials glass" data-animate="scale-in" style="padding: 3rem; border-radius: var(--radius-lg); text-align: center;">
+                <span class="badge">
+                    <i class="fa-solid fa-quote-left"></i>
+                    Témoignages
+                </span>
+                <h2 class="text-gradient" data-text="Ils nous font confiance">Ils nous font confiance</h2>
+                <div class="testimonials-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--gap); margin-top: 2rem;">
+                    <div class="testimonial" data-animate="fade-in">
+                        <div class="avatar glass" style="width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center;">
+                            <i class="fa-solid fa-user fa-2x"></i>
+                        </div>
+                        <blockquote>
+                            "Une expertise remarquable qui nous a permis de doubler notre chiffre d'affaires en 18 mois."
+                        </blockquote>
+                        <cite>
+                            <strong>Marie Dupont</strong><br>
+                            CEO, TechStart
+                        </cite>
+                    </div>
+                    <div class="testimonial" data-animate="fade-in" style="animation-delay: 200ms">
+                        <div class="avatar glass" style="width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center;">
+                            <i class="fa-solid fa-user fa-2x"></i>
+                        </div>
+                        <blockquote>
+                            "Un accompagnement de qualité qui a transformé notre organisation en profondeur."
+                        </blockquote>
+                        <cite>
+                            <strong>Pierre Martin</strong><br>
+                            DG, InnovGroup
+                        </cite>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="container" style="margin: var(--section-spacing) 0">
+            <div class="contact-grid glass" data-animate="scale-in" style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--gap); border-radius: var(--radius-lg); overflow: hidden;">
+                <div class="contact-content" style="padding: 3rem;">
+                    <span class="badge">
+                        <i class="fa-solid fa-handshake"></i>
+                        Premier rendez-vous offert
+                    </span>
+                    <h2 class="text-gradient" data-text="Échangeons sur vos projets">Échangeons sur vos projets</h2>
+                    <p class="lead" style="margin: 1rem 0 2rem;">
+                        Prenez rendez-vous pour une consultation gratuite avec l'un de nos experts.
+                    </p>
+                    <div class="contact-info">
+                        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                            <div class="icon-circle glass" style="width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <span>+33 1 23 45 67 89</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <div class="icon-circle glass" style="width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <span>contact@conseil-gestion.fr</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form glass" style="padding: 3rem; background: rgba(var(--brand-rgb), 0.05);">
+                    <form>
+                        <div class="form-group" style="margin-bottom: 1rem;">
+                            <label for="name">Nom complet</label>
+                            <input type="text" id="name" class="glass" required>
+                        </div>
+                        <div class="form-group" style="margin-bottom: 1rem;">
+                            <label for="email">Email professionnel</label>
+                            <input type="email" id="email" class="glass" required>
+                        </div>
+                        <div class="form-group" style="margin-bottom: 1rem;">
+                            <label for="message">Votre projet</label>
+                            <textarea id="message" class="glass" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn primary hover-glow" style="width: 100%;">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            Envoyer ma demande
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer glass pattern-dots">
+        <div class="container">
+            <div class="footer-grid" style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: var(--gap); padding: var(--section-spacing) 0;">
+                <div class="footer-brand">
+                    <a class="brand" href="../../index.html">
+                        <i class="fa-solid fa-chart-mixed"></i>
+                        Conseil en gestion
+                    </a>
+                    <p style="margin-top: 1rem; color: var(--text-muted);">
+                        Votre partenaire stratégique pour une croissance durable et maîtrisée.
+                    </p>
+                    <div class="social-links" style="display: flex; gap: 1rem; margin-top: 1rem;">
+                        <a href="#" class="hover-lift" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="hover-lift" aria-label="Twitter">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Navigation</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="../../index.html">Accueil</a></li>
+                        <li><a href="about-us.html">À propos</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li>
+                            <i class="fa-solid fa-location-dot"></i>
+                            123 Avenue des Consultants<br>75008 Paris
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-phone"></i>
+                            +33 1 23 45 67 89
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-envelope"></i>
+                            contact@conseil-gestion.fr
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom" style="padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); text-align: center;">
+                <p>&copy; <span id="year"></span> Conseil en gestion — Tous droits réservés</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+        <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+        <script src="../../assets/js/site.js"></script>
+</body>
+</html>

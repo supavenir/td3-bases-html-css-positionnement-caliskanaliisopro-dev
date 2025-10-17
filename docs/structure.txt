@@ -1,0 +1,13 @@
+docs/
+├─ index.html
+├─ assets/
+│  └─ css/
+│     ├─ main.css
+│     └─ td3/
+│        ├─ conseil-gestion.css
+│        └─ web-arena.css
+└─ pages/
+   └─ td3/
+      ├─ conseil-gestion.html
+      ├─ about-us.html
+      └─ blog.html
