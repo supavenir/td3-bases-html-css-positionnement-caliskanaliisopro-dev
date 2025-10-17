@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Démarrer un projet — Web Arena</title>
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/td3/web-arena.css">
+    <link rel="stylesheet" href="../../assets/css/advanced-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            document.querySelectorAll('[data-animate]').forEach((el) => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="../../index.html">Web Arena</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../../index.html">Accueil</a></li>
+                    <li><a href="about-us.html">À propos</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero pattern-dots" data-animate="fade-in">
+        <div class="glass" style="position: absolute; inset: 0; z-index: 1; opacity: 0.7;"></div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <h1 class="text-gradient" data-text="Démarrer votre projet">Démarrer votre projet</h1>
+            <p class="lead" data-animate="fade-in" style="animation-delay: 200ms">
+                Transformez votre vision en réalité avec notre expertise en design et développement web.
+            </p>
+        </div>
+    </section>
+
+    <main>
+        <section class="container" style="margin-top: var(--section-spacing)">
+            <div class="grid" style="grid-template-columns: 2fr 1fr; gap: calc(var(--gap) * 2);">
+                <!-- Formulaire de projet -->
+                <div class="glass hover-lift" data-animate="slide-in" style="padding: 3rem; border-radius: var(--radius-lg);">
+                    <h2 class="text-gradient" data-text="Détails de votre projet">Détails de votre projet</h2>
+                    <form class="project-form" style="margin-top: 2rem;">
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label for="project-type">Type de projet</label>
+                            <select id="project-type" class="form-control glass" required>
+                                <option value="">Sélectionnez un type</option>
+                                <option value="site-vitrine">Site vitrine</option>
+                                <option value="e-commerce">E-commerce</option>
+                                <option value="application">Application web</option>
+                                <option value="refonte">Refonte de site</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label for="project-name">Nom du projet</label>
+                            <input type="text" id="project-name" class="form-control glass" required>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label for="company">Entreprise</label>
+                            <input type="text" id="company" class="form-control glass">
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label for="project-description">Description du projet</label>
+                            <textarea id="project-description" class="form-control glass" rows="4" required></textarea>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label>Fonctionnalités requises</label>
+                            <div class="features-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
+                                <label class="feature-checkbox glass" style="padding: 1rem; border-radius: var(--radius-md); display: flex; align-items: center; gap: 0.5rem;">
+                                    <input type="checkbox" name="features[]" value="responsive">
+                                    <span>Design Responsive</span>
+                                </label>
+                                <label class="feature-checkbox glass" style="padding: 1rem; border-radius: var(--radius-md); display: flex; align-items: center; gap: 0.5rem;">
+                                    <input type="checkbox" name="features[]" value="cms">
+                                    <span>CMS intégré</span>
+                                </label>
+                                <label class="feature-checkbox glass" style="padding: 1rem; border-radius: var(--radius-md); display: flex; align-items: center; gap: 0.5rem;">
+                                    <input type="checkbox" name="features[]" value="analytics">
+                                    <span>Analytiques</span>
+                                </label>
+                                <label class="feature-checkbox glass" style="padding: 1rem; border-radius: var(--radius-md); display: flex; align-items: center; gap: 0.5rem;">
+                                    <input type="checkbox" name="features[]" value="seo">
+                                    <span>Optimisation SEO</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label for="budget">Budget estimé</label>
+                            <select id="budget" class="form-control glass" required>
+                                <option value="">Sélectionnez une fourchette</option>
+                                <option value="small">< 5 000 €</option>
+                                <option value="medium">5 000 € - 10 000 €</option>
+                                <option value="large">10 000 € - 20 000 €</option>
+                                <option value="enterprise">> 20 000 €</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label for="timeline">Délai souhaité</label>
+                            <select id="timeline" class="form-control glass" required>
+                                <option value="">Sélectionnez un délai</option>
+                                <option value="urgent">< 1 mois</option>
+                                <option value="normal">1-3 mois</option>
+                                <option value="relaxed">3-6 mois</option>
+                                <option value="flexible">> 6 mois</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label for="contact-email">Email de contact</label>
+                            <input type="email" id="contact-email" class="form-control glass" required>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 1.5rem;">
+                            <label for="contact-phone">Téléphone</label>
+                            <input type="tel" id="contact-phone" class="form-control glass">
+                        </div>
+
+                        <button type="submit" class="btn primary hover-glow" style="width: 100%; margin-top: 2rem;">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            Soumettre votre projet
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Sidebar -->
+                <div>
+                    <div class="glass hover-lift" data-animate="slide-in" style="padding: 2rem; border-radius: var(--radius-lg); margin-bottom: 2rem;">
+                        <h3 class="text-gradient" data-text="Notre process">Notre process</h3>
+                        <div class="process-steps" style="margin-top: 1.5rem;">
+                            <div class="step" style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                                <div class="step-number glass pulse-animation">1</div>
+                                <span>Analyse des besoins</span>
+                            </div>
+                            <div class="step" style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                                <div class="step-number glass pulse-animation">2</div>
+                                <span>Proposition & Devis</span>
+                            </div>
+                            <div class="step" style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                                <div class="step-number glass pulse-animation">3</div>
+                                <span>Design & Validation</span>
+                            </div>
+                            <div class="step" style="display: flex; align-items: center; gap: 1rem;">
+                                <div class="step-number glass pulse-animation">4</div>
+                                <span>Développement & Tests</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass hover-lift" data-animate="slide-in" style="padding: 2rem; border-radius: var(--radius-lg); margin-bottom: 2rem;">
+                        <h3 class="text-gradient" data-text="FAQ">FAQ</h3>
+                        <div class="faq-list" style="margin-top: 1.5rem;">
+                            <details class="faq-item" style="margin-bottom: 1rem;">
+                                <summary style="cursor: pointer; font-weight: 500;">Combien coûte un projet web ?</summary>
+                                <p style="margin-top: 0.5rem; color: var(--text-light);">Le coût varie selon vos besoins spécifiques. Nous adaptons nos solutions à votre budget.</p>
+                            </details>
+                            <details class="faq-item" style="margin-bottom: 1rem;">
+                                <summary style="cursor: pointer; font-weight: 500;">Combien de temps pour réaliser un projet ?</summary>
+                                <p style="margin-top: 0.5rem; color: var(--text-light);">La durée dépend de la complexité. Un site vitrine prend 1-2 mois, un e-commerce 2-4 mois.</p>
+                            </details>
+                            <details class="faq-item">
+                                <summary style="cursor: pointer; font-weight: 500;">Quelles technologies utilisez-vous ?</summary>
+                                <p style="margin-top: 0.5rem; color: var(--text-light);">Nous utilisons les dernières technologies web selon vos besoins : React, Vue.js, WordPress, etc.</p>
+                            </details>
+                        </div>
+                    </div>
+
+                    <div class="glass hover-lift" data-animate="slide-in" style="padding: 2rem; border-radius: var(--radius-lg);">
+                        <h3 class="text-gradient" data-text="Besoin d'aide ?">Besoin d'aide ?</h3>
+                        <p style="margin: 1rem 0; color: var(--text-light);">Notre équipe est là pour vous guider dans votre projet.</p>
+                        <a href="schedule-meeting.html" class="btn glass" style="width: 100%;">
+                            <i class="fa-solid fa-phone"></i>
+                            Programmer un appel
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; <span id="year"></span> Web Arena</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

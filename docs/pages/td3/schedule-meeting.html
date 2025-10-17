@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Prendre rendez-vous — Web Arena</title>
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/td3/web-arena.css">
+    <link rel="stylesheet" href="../../assets/css/advanced-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            document.querySelectorAll('[data-animate]').forEach((el) => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="../../index.html">Web Arena</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../../index.html">Accueil</a></li>
+                    <li><a href="about-us.html">À propos</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero pattern-dots" data-animate="fade-in">
+        <div class="glass" style="position: absolute; inset: 0; z-index: 1; opacity: 0.7;"></div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <h1 class="text-gradient" data-text="Prendre rendez-vous">Prendre rendez-vous</h1>
+            <p class="lead" data-animate="fade-in" style="animation-delay: 200ms">
+                Planifiez une consultation gratuite avec nos experts pour discuter de votre projet.
+            </p>
+        </div>
+    </section>
+
+    <main>
+        <section class="container" style="margin-top: var(--section-spacing)">
+            <div class="grid" style="grid-template-columns: 2fr 1fr; gap: calc(var(--gap) * 2);">
+                <!-- Calendrier et formulaire -->
+                <div class="glass hover-lift" data-animate="slide-in" style="padding: 3rem; border-radius: var(--radius-lg);">
+                    <h2 class="text-gradient" data-text="Réserver votre créneau">Réserver votre créneau</h2>
+                    
+                    <!-- Sélection de date -->
+                    <div class="calendar-section" style="margin: 2rem 0;">
+                        <h3 style="margin-bottom: 1rem;">1. Choisissez une date</h3>
+                        <div class="calendar glass" style="padding: 1.5rem; border-radius: var(--radius-md);">
+                            <div class="calendar-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                                <button class="btn glass">
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                </button>
+                                <h4>Octobre 2025</h4>
+                                <button class="btn glass">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </button>
+                            </div>
+                            <div class="calendar-grid" style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 0.5rem; text-align: center;">
+                                <div style="color: var(--text-muted);">L</div>
+                                <div style="color: var(--text-muted);">M</div>
+                                <div style="color: var(--text-muted);">M</div>
+                                <div style="color: var(--text-muted);">J</div>
+                                <div style="color: var(--text-muted);">V</div>
+                                <div style="color: var(--text-muted);">S</div>
+                                <div style="color: var(--text-muted);">D</div>
+                                
+                                <!-- Jours du calendrier -->
+                                <button class="day-btn glass" style="padding: 0.5rem; border: none; border-radius: var(--radius-sm); cursor: pointer;">1</button>
+                                <button class="day-btn glass" style="padding: 0.5rem; border: none; border-radius: var(--radius-sm); cursor: pointer;">2</button>
+                                <!-- ... autres jours ... -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sélection d'heure -->
+                    <div class="time-section" style="margin: 2rem 0;">
+                        <h3 style="margin-bottom: 1rem;">2. Choisissez une heure</h3>
+                        <div class="time-slots" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 1rem;">
+                            <button class="time-slot glass hover-lift" style="padding: 1rem; border: none; border-radius: var(--radius-md); cursor: pointer;">09:00</button>
+                            <button class="time-slot glass hover-lift" style="padding: 1rem; border: none; border-radius: var(--radius-md); cursor: pointer;">10:00</button>
+                            <button class="time-slot glass hover-lift" style="padding: 1rem; border: none; border-radius: var(--radius-md); cursor: pointer;">11:00</button>
+                            <button class="time-slot glass hover-lift" style="padding: 1rem; border: none; border-radius: var(--radius-md); cursor: pointer;">14:00</button>
+                            <button class="time-slot glass hover-lift" style="padding: 1rem; border: none; border-radius: var(--radius-md); cursor: pointer;">15:00</button>
+                            <button class="time-slot glass hover-lift" style="padding: 1rem; border: none; border-radius: var(--radius-md); cursor: pointer;">16:00</button>
+                        </div>
+                    </div>
+
+                    <!-- Formulaire de contact -->
+                    <div class="contact-section" style="margin: 2rem 0;">
+                        <h3 style="margin-bottom: 1rem;">3. Vos informations</h3>
+                        <form class="meeting-form">
+                            <div class="form-group" style="margin-bottom: 1.5rem;">
+                                <label for="name">Nom complet</label>
+                                <input type="text" id="name" class="form-control glass" required>
+                            </div>
+
+                            <div class="form-group" style="margin-bottom: 1.5rem;">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" class="form-control glass" required>
+                            </div>
+
+                            <div class="form-group" style="margin-bottom: 1.5rem;">
+                                <label for="phone">Téléphone</label>
+                                <input type="tel" id="phone" class="form-control glass" required>
+                            </div>
+
+                            <div class="form-group" style="margin-bottom: 1.5rem;">
+                                <label for="company">Entreprise (optionnel)</label>
+                                <input type="text" id="company" class="form-control glass">
+                            </div>
+
+                            <div class="form-group" style="margin-bottom: 1.5rem;">
+                                <label for="meeting-type">Type de rendez-vous</label>
+                                <select id="meeting-type" class="form-control glass" required>
+                                    <option value="">Sélectionnez un type</option>
+                                    <option value="discovery">Découverte de projet</option>
+                                    <option value="quote">Devis personnalisé</option>
+                                    <option value="technical">Consultation technique</option>
+                                    <option value="other">Autre</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group" style="margin-bottom: 1.5rem;">
+                                <label for="notes">Notes ou questions</label>
+                                <textarea id="notes" class="form-control glass" rows="4"></textarea>
+                            </div>
+
+                            <button type="submit" class="btn primary hover-glow" style="width: 100%;">
+                                <i class="fa-solid fa-calendar-check"></i>
+                                Confirmer le rendez-vous
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div>
+                    <div class="glass hover-lift" data-animate="slide-in" style="padding: 2rem; border-radius: var(--radius-lg); margin-bottom: 2rem;">
+                        <h3 class="text-gradient" data-text="À propos de la consultation">À propos de la consultation</h3>
+                        <div class="meeting-info" style="margin-top: 1.5rem;">
+                            <div class="info-item" style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                                <i class="fa-solid fa-clock" style="color: var(--brand)"></i>
+                                <div>
+                                    <strong>Durée</strong>
+                                    <p style="color: var(--text-light);">45 minutes</p>
+                                </div>
+                            </div>
+                            <div class="info-item" style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                                <i class="fa-solid fa-video" style="color: var(--brand)"></i>
+                                <div>
+                                    <strong>Format</strong>
+                                    <p style="color: var(--text-light);">Visioconférence ou présentiel</p>
+                                </div>
+                            </div>
+                            <div class="info-item" style="display: flex; align-items: center; gap: 1rem;">
+                                <i class="fa-solid fa-euro-sign" style="color: var(--brand)"></i>
+                                <div>
+                                    <strong>Coût</strong>
+                                    <p style="color: var(--text-light);">Consultation gratuite</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass hover-lift" data-animate="slide-in" style="padding: 2rem; border-radius: var(--radius-lg); margin-bottom: 2rem;">
+                        <h3 class="text-gradient" data-text="Ce que nous aborderons">Ce que nous aborderons</h3>
+                        <ul class="meeting-topics" style="list-style: none; padding: 0; margin-top: 1.5rem;">
+                            <li style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                                <i class="fa-solid fa-check" style="color: var(--accent)"></i>
+                                <span>Vos objectifs et besoins</span>
+                            </li>
+                            <li style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                                <i class="fa-solid fa-check" style="color: var(--accent)"></i>
+                                <span>Solutions techniques possibles</span>
+                            </li>
+                            <li style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                                <i class="fa-solid fa-check" style="color: var(--accent)"></i>
+                                <span>Budget et planning</span>
+                            </li>
+                            <li style="display: flex; align-items: center; gap: 1rem;">
+                                <i class="fa-solid fa-check" style="color: var(--accent)"></i>
+                                <span>Prochaines étapes</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="glass hover-lift" data-animate="slide-in" style="padding: 2rem; border-radius: var(--radius-lg);">
+                        <h3 class="text-gradient" data-text="Questions ?">Questions ?</h3>
+                        <p style="margin: 1rem 0; color: var(--text-light);">Contactez-nous directement :</p>
+                        <div style="display: flex; flex-direction: column; gap: 1rem;">
+                            <a href="tel:+33123456789" class="btn glass">
+                                <i class="fa-solid fa-phone"></i>
+                                +33 1 23 45 67 89
+                            </a>
+                            <a href="mailto:contact@webarena.fr" class="btn glass">
+                                <i class="fa-solid fa-envelope"></i>
+                                contact@webarena.fr
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; <span id="year"></span> Web Arena</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
