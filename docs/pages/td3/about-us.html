@@ -6,8 +6,27 @@
     <title>About Us — Web Arena</title>
     <link rel="stylesheet" href="../../assets/css/main.css">
     <link rel="stylesheet" href="../../assets/css/td3/web-arena.css">
+    <link rel="stylesheet" href="../../assets/css/advanced-styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Intersection Observer pour les animations au scroll -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            document.querySelectorAll('[data-animate]').forEach((el) => {
+                observer.observe(el);
+            });
+        });
+    </script>
 </head>
 <body>
         <header class="site-header">
@@ -23,32 +42,154 @@
             </div>
         </header>
 
-    <main class="container about">
-        <section class="intro">
-            <h2>À propos de Web Arena</h2>
-            <p class="lead">Nous concevons des expériences web performantes et centrées utilisateur.</p>
-                <div class="hero-visual"><img class="img-placeholder" src="../../assets/images/hero-placeholder.svg" alt="Web Arena visuel"></div>
+    <section class="hero pattern-dots" data-animate="fade-in">
+        <div class="glass" style="position: absolute; inset: 0; z-index: 1; opacity: 0.7;"></div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <h1 class="text-gradient" data-text="À propos de Web Arena">À propos de Web Arena</h1>
+            <p class="lead" data-animate="fade-in" style="animation-delay: 200ms">
+                Nous créons des expériences web innovantes qui transforment vos visiteurs en ambassadeurs de votre marque.
+            </p>
+            <div class="hero-actions" data-animate="scale-in" style="animation-delay: 400ms">
+                <a href="#vision" class="btn primary hover-glow">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    Découvrir notre vision
+                </a>
+                <a href="#contact" class="btn glass">
+                    <i class="fa-solid fa-comments"></i>
+                    Échanger avec nous
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <section id="vision" class="container" style="margin-top: var(--section-spacing)">
+            <div class="glass hover-lift" data-animate="slide-in" style="padding: 3rem; border-radius: var(--radius-lg); max-width: 800px; margin: 0 auto;">
+                <div class="pattern-grid" style="position: absolute; inset: 0; opacity: 0.1; z-index: -1;"></div>
+                <h2 class="text-gradient" data-text="Notre Vision">Notre Vision</h2>
+                <p class="lead" style="font-size: 1.25rem; color: var(--text-light); margin-bottom: 2rem;">
+                    Chez Web Arena, nous fusionnons design créatif, innovation technique et stratégie marketing pour créer 
+                    des expériences digitales qui dépassent les attentes.
+                </p>
+                <div class="stats-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; text-align: center;">
+                    <div data-animate="fade-in" style="animation-delay: 200ms">
+                        <div class="stat-number float-animation">98%</div>
+                        <p style="color: var(--text-light)">Satisfaction client</p>
+                    </div>
+                    <div data-animate="fade-in" style="animation-delay: 400ms">
+                        <div class="stat-number accent pulse-animation">250+</div>
+                        <p style="color: var(--text-light)">Projets réalisés</p>
+                    </div>
+                    <div data-animate="fade-in" style="animation-delay: 600ms">
+                        <div class="stat-number dark float-animation">15</div>
+                        <p style="color: var(--text-light)">Experts passionnés</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section class="features">
-            <div class="card">
-                <header class="card-header"><i class="fa-solid fa-bullseye fa-2x"></i><h3>Mission</h3></header>
-                <div class="card-body"><p>Créer des solutions digitales qui convertissent et fidélisent.</p></div>
-            </div>
+        <section class="container" style="margin-top: var(--section-spacing)">
+            <div class="grid" style="gap: calc(var(--gap) * 2);">
+                <article class="service-card hover-lift" data-animate="slide-in">
+                    <div class="pattern-dots" style="position: absolute; inset: 0; opacity: 0.05;"></div>
+                    <header class="card-header">
+                        <i class="fa-solid fa-bullseye fa-2x" style="color: var(--brand)"></i>
+                        <h3>Notre Mission</h3>
+                    </header>
+                    <div class="card-body">
+                        <p>Créer des solutions digitales qui transcendent les attentes, en plaçant l'innovation et l'excellence au cœur de chaque projet.</p>
+                        <div class="features-list" style="margin-top: 1.5rem;">
+                            <div class="feature" style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                                <i class="fa-solid fa-check" style="color: var(--accent)"></i>
+                                <span>Design centré utilisateur</span>
+                            </div>
+                            <div class="feature" style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                                <i class="fa-solid fa-check" style="color: var(--accent)"></i>
+                                <span>Performance optimale</span>
+                            </div>
+                            <div class="feature" style="display: flex; align-items: center; gap: 1rem;">
+                                <i class="fa-solid fa-check" style="color: var(--accent)"></i>
+                                <span>Conversion maximale</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
 
-            <div class="card">
-                <header class="card-header"><i class="fa-solid fa-people-group fa-2x"></i><h3>Équipe</h3></header>
-                <div class="card-body"><p>Experts en UX, développement et marketing digital.</p></div>
-            </div>
+                <article class="service-card hover-lift" data-animate="slide-in" style="animation-delay: 200ms">
+                    <div class="pattern-dots" style="position: absolute; inset: 0; opacity: 0.05;"></div>
+                    <header class="card-header">
+                        <i class="fa-solid fa-people-group fa-2x" style="color: var(--accent)"></i>
+                        <h3>Notre Équipe</h3>
+                    </header>
+                    <div class="card-body">
+                        <p>Une équipe pluridisciplinaire d'experts passionnés, unis par une vision commune : l'excellence dans chaque pixel.</p>
+                        <div class="team-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; margin-top: 1.5rem;">
+                            <div class="team-member text-center">
+                                <div class="avatar glass" style="width: 60px; height: 60px; border-radius: 50%; margin: 0 auto 0.5rem; display: flex; align-items: center; justify-content: center;">
+                                    <i class="fa-solid fa-palette" style="color: var(--brand)"></i>
+                                </div>
+                                <div>UX/UI Design</div>
+                            </div>
+                            <div class="team-member text-center">
+                                <div class="avatar glass" style="width: 60px; height: 60px; border-radius: 50%; margin: 0 auto 0.5rem; display: flex; align-items: center; justify-content: center;">
+                                    <i class="fa-solid fa-code" style="color: var(--accent)"></i>
+                                </div>
+                                <div>Développement</div>
+                            </div>
+                            <div class="team-member text-center">
+                                <div class="avatar glass" style="width: 60px; height: 60px; border-radius: 50%; margin: 0 auto 0.5rem; display: flex; align-items: center; justify-content: center;">
+                                    <i class="fa-solid fa-chart-line" style="color: var(--brand-dark)"></i>
+                                </div>
+                                <div>Marketing</div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
 
-            <div class="card">
-                <header class="card-header"><i class="fa-solid fa-gear fa-2x"></i><h3>Processus</h3></header>
-                <div class="card-body"><p>Design sprint, audits techniques et accompagnement continu.</p></div>
+                <article class="service-card hover-lift" data-animate="slide-in" style="animation-delay: 400ms">
+                    <div class="pattern-dots" style="position: absolute; inset: 0; opacity: 0.05;"></div>
+                    <header class="card-header">
+                        <i class="fa-solid fa-gear fa-2x" style="color: var(--brand-dark)"></i>
+                        <h3>Notre Processus</h3>
+                    </header>
+                    <div class="card-body">
+                        <p>Une méthodologie éprouvée qui garantit des résultats exceptionnels, dans les délais et le budget impartis.</p>
+                        <div class="process-steps" style="margin-top: 1.5rem;">
+                            <div class="step" style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                                <div class="step-number glass" style="width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600;">1</div>
+                                <span>Design Sprint</span>
+                            </div>
+                            <div class="step" style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                                <div class="step-number glass" style="width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600;">2</div>
+                                <span>Développement Agile</span>
+                            </div>
+                            <div class="step" style="display: flex; align-items: center; gap: 1rem;">
+                                <div class="step-number glass" style="width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600;">3</div>
+                                <span>Tests & Optimisation</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
             </div>
         </section>
 
-        <section class="cta">
-            <a class="btn primary" href="#">Rejoignez-nous</a>
+        <section id="contact" class="container" style="margin-top: var(--section-spacing); margin-bottom: var(--section-spacing)">
+            <div class="glass hover-lift" data-animate="scale-in" style="max-width: 800px; margin: 0 auto; padding: 3rem; border-radius: var(--radius-lg); text-align: center;">
+                <h2 class="text-gradient" data-text="Démarrons ensemble">Démarrons ensemble</h2>
+                <p class="lead" style="font-size: 1.25rem; color: var(--text-light); margin-bottom: 2rem;">
+                    Prêt à transformer votre présence digitale ? Prenons un café pour en discuter.
+                </p>
+                <div class="cta-buttons" style="display: flex; gap: 1rem; justify-content: center;">
+                    <a class="btn primary hover-glow" href="#" style="padding: 1rem 2rem;">
+                        <i class="fa-solid fa-rocket"></i>
+                        Démarrer un projet
+                    </a>
+                    <a class="btn glass" href="#" style="padding: 1rem 2rem;">
+                        <i class="fa-solid fa-calendar"></i>
+                        Prendre rendez-vous
+                    </a>
+                </div>
+            </div>
         </section>
     </main>
 
@@ -58,5 +199,6 @@
 
         <script>document.getElementById('year2').textContent = new Date().getFullYear();</script>
         <script src="../../assets/js/site.js"></script>
+        <script src="../../assets/js/animations.js"></script>
 </body>
 </html>

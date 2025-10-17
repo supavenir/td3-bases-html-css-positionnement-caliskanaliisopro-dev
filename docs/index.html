@@ -3,46 +3,242 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page d'accueil</title>
+    <title>Showcase — Designs Professionnels</title>
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/td3/conseil-gestion.css">
     <link rel="stylesheet" href="assets/css/td3/web-arena.css">
+    <link rel="stylesheet" href="assets/css/advanced-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            document.querySelectorAll('[data-animate]').forEach((el) => {
+                observer.observe(el);
+            });
+        });
+    </script>
 </head>
-<body>
-    <header class="site-header">
+<body class="showcase-page">
+    <header class="site-header glass">
         <div class="container header-inner">
-            <a class="brand" href="index.html">Site démo — TD3</a>
+            <a class="brand" href="index.html">
+                <i class="fa-solid fa-cubes"></i>
+                Showcase Pro
+            </a>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="pages/td3/conseil-gestion.html">Conseil en gestion</a></li>
-                    <li><a href="pages/td3/about-us.html">About Us (Web-Arena)</a></li>
-                    <li><a href="pages/td3/blog.html">Blog (Web-Arena)</a></li>
+                    <li><a href="pages/td3/conseil-gestion.html">Conseil</a></li>
+                    <li><a href="pages/td3/about-us.html">À propos</a></li>
+                    <li><a href="pages/td3/blog.html">Blog</a></li>
+                    <li>
+                        <a href="https://github.com/supavenir/td3-bases-html-css-positionnement-caliskanaliisopro-dev" class="btn glass" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-github"></i>
+                            GitHub
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </div>
     </header>
-    <main class="container">
-        <section class="hero">
-            <h2>Présentation</h2>
-            <p class="lead">Ceci est la page d'accueil de notre site. Explorez les sections pour visualiser les démos TD3.</p>
+
+    <main>
+        <section class="hero pattern-dots" data-animate="fade-in" style="min-height: 100vh; display: flex; align-items: center;">
+            <div class="glass" style="position: absolute; inset: 0; z-index: 1; opacity: 0.7;"></div>
+            <div class="container" style="position: relative; z-index: 2; text-align: center;">
+                <span class="badge glass" data-animate="slide-in">
+                    <i class="fa-solid fa-rocket"></i>
+                    Designs professionnels
+                </span>
+                <h1 class="text-gradient" data-text="Collection de designs modernes">
+                    Collection de designs modernes
+                </h1>
+                <p class="lead" data-animate="fade-in" style="animation-delay: 200ms; max-width: 720px; margin: 1.5rem auto;">
+                    Explorez notre collection de designs web premium mettant en valeur les dernières 
+                    tendances en matière d'interfaces utilisateur et d'expérience utilisateur.
+                </p>
+                <div class="cta-buttons" data-animate="scale-in" style="animation-delay: 400ms; margin-top: 2rem;">
+                    <a href="#demos" class="btn primary hover-glow">
+                        <i class="fa-solid fa-eye"></i>
+                        Découvrir les démos
+                    </a>
+                    <a href="https://github.com/supavenir/td3-bases-html-css-positionnement-caliskanaliisopro-dev" class="btn glass" target="_blank" rel="noopener noreferrer">
+                        <i class="fa-brands fa-github"></i>
+                        Voir sur GitHub
+                    </a>
+                </div>
+            </div>
         </section>
 
-        <section>
-            <ul>
-              <li><a href="pages/td3/conseil-gestion.html">Conseil en gestion</a></li>
-              <li><a href="pages/td3/about-us.html">About Us (Web-Arena)</a></li>
-              <li><a href="pages/td3/blog.html">Blog (Web-Arena)</a></li>
-            </ul>
+        <section id="demos" class="container" style="margin: var(--section-spacing) 0;">
+            <header class="section-header text-center" data-animate="fade-in">
+                <span class="badge glass">
+                    <i class="fa-solid fa-palette"></i>
+                    Nos démos
+                </span>
+                <h2 class="text-gradient" data-text="Designs élégants et fonctionnels">
+                    Designs élégants et fonctionnels
+                </h2>
+                <p class="lead" style="max-width: 720px; margin: 1.5rem auto;">
+                    Chaque design a été soigneusement conçu pour offrir une expérience utilisateur optimale,
+                    combinant esthétique moderne et fonctionnalités avancées.
+                </p>
+            </header>
+
+            <div class="demos-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--gap); margin-top: 3rem;">
+                <article class="demo-card glass hover-lift" data-animate="slide-in">
+                    <div class="demo-preview" style="height: 200px; border-radius: var(--radius-md); margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; background: rgba(var(--brand-rgb), 0.05);">
+                        <i class="fa-solid fa-chart-line fa-3x" style="color: var(--brand);"></i>
+                    </div>
+                    <div class="demo-content" style="padding: 0 1.5rem 1.5rem;">
+                        <h3>Conseil en gestion</h3>
+                        <p style="margin: 1rem 0; color: var(--text-muted);">
+                            Design professionnel pour cabinet de conseil avec sections services, 
+                            témoignages et formulaire de contact.
+                        </p>
+                        <div class="tags-cloud" style="margin-bottom: 1.5rem;">
+                            <span class="tag"><i class="fa-solid fa-check"></i> Services</span>
+                            <span class="tag"><i class="fa-solid fa-check"></i> Témoignages</span>
+                            <span class="tag"><i class="fa-solid fa-check"></i> Contact</span>
+                        </div>
+                        <a href="pages/td3/conseil-gestion.html" class="btn primary hover-glow" style="width: 100%;">
+                            <i class="fa-solid fa-arrow-right"></i>
+                            Voir la démo
+                        </a>
+                    </div>
+                </article>
+
+                <article class="demo-card glass hover-lift" data-animate="slide-in" style="animation-delay: 200ms">
+                    <div class="demo-preview" style="height: 200px; border-radius: var(--radius-md); margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; background: rgba(var(--accent-rgb), 0.05);">
+                        <i class="fa-solid fa-users fa-3x" style="color: var(--accent);"></i>
+                    </div>
+                    <div class="demo-content" style="padding: 0 1.5rem 1.5rem;">
+                        <h3>À propos</h3>
+                        <p style="margin: 1rem 0; color: var(--text-muted);">
+                            Page de présentation moderne avec statistiques animées, 
+                            grid d'équipe et section contact.
+                        </p>
+                        <div class="tags-cloud" style="margin-bottom: 1.5rem;">
+                            <span class="tag"><i class="fa-solid fa-check"></i> Stats</span>
+                            <span class="tag"><i class="fa-solid fa-check"></i> Équipe</span>
+                            <span class="tag"><i class="fa-solid fa-check"></i> Vision</span>
+                        </div>
+                        <a href="pages/td3/about-us.html" class="btn primary hover-glow" style="width: 100%;">
+                            <i class="fa-solid fa-arrow-right"></i>
+                            Voir la démo
+                        </a>
+                    </div>
+                </article>
+
+                <article class="demo-card glass hover-lift" data-animate="slide-in" style="animation-delay: 400ms">
+                    <div class="demo-preview" style="height: 200px; border-radius: var(--radius-md); margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; background: rgba(var(--brand-dark-rgb), 0.05);">
+                        <i class="fa-solid fa-newspaper fa-3x" style="color: var(--brand-dark);"></i>
+                    </div>
+                    <div class="demo-content" style="padding: 0 1.5rem 1.5rem;">
+                        <h3>Blog</h3>
+                        <p style="margin: 1rem 0; color: var(--text-muted);">
+                            Blog élégant avec articles mis en avant, sidebar interactive 
+                            et système de tags avancé.
+                        </p>
+                        <div class="tags-cloud" style="margin-bottom: 1.5rem;">
+                            <span class="tag"><i class="fa-solid fa-check"></i> Articles</span>
+                            <span class="tag"><i class="fa-solid fa-check"></i> Sidebar</span>
+                            <span class="tag"><i class="fa-solid fa-check"></i> Tags</span>
+                        </div>
+                        <a href="pages/td3/blog.html" class="btn primary hover-glow" style="width: 100%;">
+                            <i class="fa-solid fa-arrow-right"></i>
+                            Voir la démo
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="container" style="margin: var(--section-spacing) 0;">
+            <div class="features-grid glass" data-animate="scale-in" style="padding: 3rem; border-radius: var(--radius-lg); display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--gap);">
+                <div class="feature" style="text-align: center;">
+                    <div class="icon-circle glass" style="width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center;">
+                        <i class="fa-solid fa-wand-magic-sparkles fa-2x" style="color: var(--brand);"></i>
+                    </div>
+                    <h3>Design moderne</h3>
+                    <p>Interfaces élégantes avec effets visuels avancés et animations fluides.</p>
+                </div>
+                <div class="feature" style="text-align: center;">
+                    <div class="icon-circle glass" style="width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center;">
+                        <i class="fa-solid fa-mobile-screen fa-2x" style="color: var(--accent);"></i>
+                    </div>
+                    <h3>100% Responsive</h3>
+                    <p>Adaptation parfaite sur tous les appareils et tailles d'écran.</p>
+                </div>
+                <div class="feature" style="text-align: center;">
+                    <div class="icon-circle glass" style="width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center;">
+                        <i class="fa-solid fa-code fa-2x" style="color: var(--brand-dark);"></i>
+                    </div>
+                    <h3>Code optimisé</h3>
+                    <p>Code propre et structuré suivant les meilleures pratiques.</p>
+                </div>
+            </div>
         </section>
     </main>
 
-    <footer class="site-footer">
-        <div class="container"><p>&copy; <span id="year-index"></span> Organisation démo</p></div>
-    </footer>
-        <script>document.getElementById('year-index').textContent = new Date().getFullYear();</script>
-        <div class="container hero-visual">
-            <img class="img-placeholder" src="assets/images/hero-placeholder.svg" alt="Visuel" />
+    <footer class="site-footer glass pattern-dots">
+        <div class="container">
+            <div class="footer-grid" style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: var(--gap); padding: var(--section-spacing) 0;">
+                <div class="footer-brand">
+                    <a class="brand" href="index.html">
+                        <i class="fa-solid fa-cubes"></i>
+                        Showcase Pro
+                    </a>
+                    <p style="margin-top: 1rem; color: var(--text-muted);">
+                        Collection de designs web modernes et professionnels, 
+                        mettant en valeur les dernières tendances du web design.
+                    </p>
+                    <div class="social-links" style="display: flex; gap: 1rem; margin-top: 1rem;">
+                        <a href="#" class="hover-lift" aria-label="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="#" class="hover-lift" aria-label="Twitter">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+                        <a href="#" class="hover-lift" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Navigation</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="pages/td3/conseil-gestion.html">Conseil</a></li>
+                        <li><a href="pages/td3/about-us.html">À propos</a></li>
+                        <li><a href="pages/td3/blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-tech">
+                    <h4>Technologies</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><i class="fa-brands fa-html5"></i> HTML5</li>
+                        <li><i class="fa-brands fa-css3-alt"></i> CSS3</li>
+                        <li><i class="fa-brands fa-js"></i> JavaScript</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom" style="padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); text-align: center;">
+                <p>&copy; <span id="year"></span> Showcase Pro — Tous droits réservés</p>
+            </div>
         </div>
-        <script src="assets/js/site.js"></script>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
