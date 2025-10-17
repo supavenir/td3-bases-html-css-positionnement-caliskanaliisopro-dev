@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conseil en gestion</title>
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/td3/conseil-gestion.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <h1 class="brand">Conseil en gestion</h1>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../../index.html">Accueil</a></li>
+                    <li><a class="active" href="about-us.html">À propos</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h2>Accompagnement pour dirigeants</h2>
+            <p>Solutions sur-mesure pour améliorer la performance et la gouvernance.</p>
+        </section>
+
+        <section class="cards-grid" aria-label="Nos services">
+            <article class="card">
+                <header class="card-header">
+                    <i class="fa-solid fa-chart-line fa-2x" aria-hidden="true"></i>
+                    <h3>Diagnostic financier</h3>
+                </header>
+                <div class="card-body">
+                    <p>Analyse complète des comptes et recommandations opérationnelles pour restaurer la marge.</p>
+                    <a class="btn" href="#">En savoir plus <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <article class="card">
+                <header class="card-header">
+                    <i class="fa-solid fa-users fa-2x"></i>
+                    <h3>Organisation & RH</h3>
+                </header>
+                <div class="card-body">
+                    <p>Refonte des processus et accompagnement du changement pour une équipe plus agile.</p>
+                    <a class="btn" href="#">En savoir plus <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </article>
+
+            <article class="card">
+                <header class="card-header">
+                    <i class="fa-solid fa-lightbulb fa-2x"></i>
+                    <h3>Stratégie & croissance</h3>
+                </header>
+                <div class="card-body">
+                    <p>Plan stratégique et feuille de route pour accélérer la croissance durable.</p>
+                    <a class="btn" href="#">En savoir plus <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </article>
+        </section>
+
+        <section class="contact">
+            <div class="card contact-card">
+                <header class="card-header"><h3>Contact</h3></header>
+                <div class="card-body">
+                    <p>Envoyez-nous un message et nous reviendrons rapidement vers vous.</p>
+                    <a class="btn primary" href="#">Nous contacter</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; <span id="year"></span> Conseil en gestion — Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

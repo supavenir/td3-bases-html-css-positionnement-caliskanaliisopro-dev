@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blog — Web Arena</title>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <link rel="stylesheet" href="../../assets/css/td3/web-arena.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="brand">Web Arena — Blog</h1>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="../../index.html">Accueil</a></li>
+          <li><a href="about-us.html">À propos</a></li>
+          <li><a class="active" href="blog.html">Blog</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container blog-layout">
+    <div class="content">
+      <section class="posts">
+        <article class="post">
+          <h2 class="post-title">Améliorer la conversion en 5 étapes</h2>
+          <p class="meta">Par <strong>Julie</strong> — <time datetime="2025-10-01">1 oct. 2025</time> — <span class="tags"><a class="tag" href="#">UX</a> <a class="tag" href="#">Conversion</a></span></p>
+          <p>Une synthèse d'actions rapides pour augmenter le taux de conversion sur vos pages clés.</p>
+          <a class="readmore" href="#">Lire la suite →</a>
+        </article>
+
+        <article class="post">
+          <h2 class="post-title">Checklist performance front-end</h2>
+          <p class="meta">Par <strong>Marc</strong> — <time datetime="2025-09-15">15 sept. 2025</time> — <span class="tags"><a class="tag" href="#">Performance</a> <a class="tag" href="#">SEO</a></span></p>
+          <p>Points clés pour optimiser le chargement et améliorer l'expérience utilisateur.</p>
+          <a class="readmore" href="#">Lire la suite →</a>
+        </article>
+
+        <nav class="pagination" aria-label="Pagination blog">
+          <a class="page" href="#">« Précédent</a>
+          <a class="page" href="#">1</a>
+          <a class="page" href="#">2</a>
+          <a class="page" href="#">Suivant »</a>
+        </nav>
+      </section>
+    </div>
+
+    <aside class="sidebar">
+      <div class="card">
+        <header class="card-header"><h3>Recherche</h3></header>
+        <div class="card-body"><input type="search" placeholder="Rechercher..." style="width:100%;padding:.5rem;border:1px solid #ddd;border-radius:6px"></div>
+      </div>
+
+      <div class="card">
+        <header class="card-header"><h3>Tags populaires</h3></header>
+        <div class="card-body tags-list">
+          <a class="tag" href="#">UX</a>
+          <a class="tag" href="#">Performance</a>
+          <a class="tag" href="#">SEO</a>
+          <a class="tag" href="#">Design</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <header class="card-header"><h3>À propos</h3></header>
+        <div class="card-body"><p>Web Arena publie des articles sur le web design, le développement et le marketing digital.</p></div>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container"><p>&copy; <span id="year3"></span> Web Arena — Blog</p></div>
+  </footer>
+
+  <script>document.getElementById('year3').textContent=new Date().getFullYear();</script>
+</body>
+</html>

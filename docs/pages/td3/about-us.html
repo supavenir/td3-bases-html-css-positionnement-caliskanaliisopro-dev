@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About Us — Web Arena</title>
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link rel="stylesheet" href="../../assets/css/td3/web-arena.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <h1 class="brand">Web Arena</h1>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="../../index.html">Accueil</a></li>
+                    <li><a class="active" href="about-us.html">À propos</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container about">
+        <section class="intro">
+            <h2>À propos de Web Arena</h2>
+            <p class="lead">Nous concevons des expériences web performantes et centrées utilisateur.</p>
+        </section>
+
+        <section class="features">
+            <div class="card">
+                <header class="card-header"><i class="fa-solid fa-bullseye fa-2x"></i><h3>Mission</h3></header>
+                <div class="card-body"><p>Créer des solutions digitales qui convertissent et fidélisent.</p></div>
+            </div>
+
+            <div class="card">
+                <header class="card-header"><i class="fa-solid fa-people-group fa-2x"></i><h3>Équipe</h3></header>
+                <div class="card-body"><p>Experts en UX, développement et marketing digital.</p></div>
+            </div>
+
+            <div class="card">
+                <header class="card-header"><i class="fa-solid fa-gear fa-2x"></i><h3>Processus</h3></header>
+                <div class="card-body"><p>Design sprint, audits techniques et accompagnement continu.</p></div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <a class="btn primary" href="#">Rejoignez-nous</a>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container"><p>&copy; <span id="year2"></span> Web Arena</p></div>
+    </footer>
+
+    <script>document.getElementById('year2').textContent = new Date().getFullYear();</script>
+</body>
+</html>
