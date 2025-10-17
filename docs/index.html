@@ -11,8 +11,8 @@
 <body>
     <header class="site-header">
         <div class="container header-inner">
-            <h1>Bienvenue sur notre site</h1>
-            <nav>
+            <a class="brand" href="index.html">Site démo — TD3</a>
+            <nav class="main-nav">
                 <ul>
                     <li><a href="pages/td3/conseil-gestion.html">Conseil en gestion</a></li>
                     <li><a href="pages/td3/about-us.html">About Us (Web-Arena)</a></li>
@@ -21,14 +21,28 @@
             </nav>
         </div>
     </header>
-    <main>
-        <section>
+    <main class="container">
+        <section class="hero">
             <h2>Présentation</h2>
-            <p>Ceci est la page d'accueil de notre site. Explorez nos différentes sections pour en savoir plus.</p>
+            <p class="lead">Ceci est la page d'accueil de notre site. Explorez les sections pour visualiser les démos TD3.</p>
+        </section>
+
+        <section>
+            <ul>
+              <li><a href="pages/td3/conseil-gestion.html">Conseil en gestion</a></li>
+              <li><a href="pages/td3/about-us.html">About Us (Web-Arena)</a></li>
+              <li><a href="pages/td3/blog.html">Blog (Web-Arena)</a></li>
+            </ul>
         </section>
     </main>
-    <footer>
-        <p>&copy; 2023 Votre Organisation. Tous droits réservés.</p>
+
+    <footer class="site-footer">
+        <div class="container"><p>&copy; <span id="year-index"></span> Organisation démo</p></div>
     </footer>
+        <script>document.getElementById('year-index').textContent = new Date().getFullYear();</script>
+        <div class="container hero-visual">
+            <img class="img-placeholder" src="assets/images/hero-placeholder.svg" alt="Visuel" />
+        </div>
+        <script src="assets/js/site.js"></script>
 </body>
 </html>

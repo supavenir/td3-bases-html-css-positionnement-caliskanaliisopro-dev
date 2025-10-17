@@ -10,23 +10,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="site-header">
-        <div class="container header-inner">
-            <h1 class="brand">Web Arena</h1>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="../../index.html">Accueil</a></li>
-                    <li><a class="active" href="about-us.html">À propos</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+        <header class="site-header">
+            <div class="container header-inner">
+                <a class="brand" href="../../index.html">Web Arena</a>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="../../index.html">Accueil</a></li>
+                        <li><a class="active" href="about-us.html">À propos</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
 
     <main class="container about">
         <section class="intro">
             <h2>À propos de Web Arena</h2>
             <p class="lead">Nous concevons des expériences web performantes et centrées utilisateur.</p>
+                <div class="hero-visual"><img class="img-placeholder" src="../../assets/images/hero-placeholder.svg" alt="Web Arena visuel"></div>
         </section>
 
         <section class="features">
@@ -55,6 +56,7 @@
         <div class="container"><p>&copy; <span id="year2"></span> Web Arena</p></div>
     </footer>
 
-    <script>document.getElementById('year2').textContent = new Date().getFullYear();</script>
+        <script>document.getElementById('year2').textContent = new Date().getFullYear();</script>
+        <script src="../../assets/js/site.js"></script>
 </body>
 </html>

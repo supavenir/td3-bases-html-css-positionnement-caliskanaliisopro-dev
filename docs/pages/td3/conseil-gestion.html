@@ -10,23 +10,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <header class="site-header">
-        <div class="container header-inner">
-            <h1 class="brand">Conseil en gestion</h1>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="../../index.html">Accueil</a></li>
-                    <li><a class="active" href="about-us.html">À propos</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+        <header class="site-header">
+            <div class="container header-inner">
+                <a class="brand" href="../../index.html">Conseil en gestion</a>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="../../index.html">Accueil</a></li>
+                        <li><a href="about-us.html">À propos</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
 
     <main class="container">
         <section class="hero">
             <h2>Accompagnement pour dirigeants</h2>
             <p>Solutions sur-mesure pour améliorer la performance et la gouvernance.</p>
+                <div class="hero-visual"><img class="img-placeholder" src="../../assets/images/hero-placeholder.svg" alt="Conseil visuel"></div>
         </section>
 
         <section class="cards-grid" aria-label="Nos services">
@@ -81,8 +82,7 @@
         </div>
     </footer>
 
-    <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+        <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+        <script src="../../assets/js/site.js"></script>
 </body>
 </html>
